@@ -32,34 +32,41 @@ export default function Header() {
         router.push('/');
     };
     return (<header className="sticky top-0 z-50 border-b border-[#E5E5E5]/80 bg-white/95 py-3.5 backdrop-blur-md">
-      <div className="container-custom flex items-center justify-between">
+      <div className="container-custom relative flex items-center justify-between">
         <Link href="/" aria-label="RentEase home" className="flex items-center gap-2">
           <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#111111] text-[16px] font-bold text-white">R</span>
           <span className="text-[16px] font-extrabold tracking-[0.16em] text-[#111111]">RENTEASE</span>
         </Link>
 
-        <nav className="hidden items-center gap-8 text-[13px] font-medium md:flex" aria-label="Primary navigation">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 text-[13px] font-medium lg:flex" aria-label="Primary navigation">
           {links.map((link) => (<Link key={link.href} href={link.href} className={`nav-link-animated py-1 ${pathname.startsWith(link.href) ? 'active' : ''}`}>
               {link.label}
             </Link>))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="absolute right-12 hidden items-center gap-5 lg:flex">
           {user ? (<>
               <Link href={`/${user.role}/dashboard`} className="btn-secondary btn-sm">{user.name.split(' ')[0]} · Dashboard</Link>
               <button onClick={logout} className="text-[12px] font-medium text-[#595959] hover:text-[#111111]">Sign out</button>
             </>) : (<>
-              <Link href="/login" className="text-[13px] font-medium hover:text-[#595959]">Log in</Link>
-              <Link href="/register" className="btn-primary btn-sm">Create account</Link>
+              <Link href="/login" className="flex h-9 items-center text-[13px] font-medium hover:text-[#595959]">Log in</Link>
+              <Link href="/register" className="btn-primary btn-sm h-9">Create account</Link>
             </>)}
+          <button type="button" className="btn-icon !hidden md:!inline-flex lg:!hidden" aria-label={mobileOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileOpen} onClick={() => setMobileOpen((open) => !open)}>
+            {mobileOpen ? <X className="h-4 w-4"/> : <Menu className="h-4 w-4"/>}
+          </button>
         </div>
 
-        <button type="button" className="btn-icon md:hidden" aria-label={mobileOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileOpen} onClick={() => setMobileOpen((open) => !open)}>
+        <button type="button" className="btn-icon !hidden md:!inline-flex lg:!hidden" aria-label={mobileOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileOpen} onClick={() => setMobileOpen((open) => !open)}>
+          {mobileOpen ? <X className="h-4 w-4"/> : <Menu className="h-4 w-4"/>}
+        </button>
+
+        <button type="button" className="btn-icon !inline-flex md:!hidden" aria-label={mobileOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileOpen} onClick={() => setMobileOpen((open) => !open)}>
           {mobileOpen ? <X className="h-4 w-4"/> : <Menu className="h-4 w-4"/>}
         </button>
       </div>
 
-      {mobileOpen && (<nav className="container-custom grid gap-1 border-t border-[#E5E5E5] py-3 md:hidden" aria-label="Mobile navigation">
+      {mobileOpen && (<nav className="container-custom grid gap-1 border-t border-[#E5E5E5] py-3 lg:hidden" aria-label="Mobile navigation">
           {links.map((link) => (<Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className="rounded-md px-3 py-2.5 text-[14px] hover:bg-[#F6F6F4]">
               {link.label}
             </Link>))}

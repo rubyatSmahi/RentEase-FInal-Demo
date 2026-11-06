@@ -38,7 +38,7 @@ Use only these illustrative credentials; do not enter a real password or confide
 
 ## Persistence
 
-The typed seed records live in `src/data/rentease.ts`; browser persistence and session helpers live in `src/lib/demo-store.ts`. On first use, the store copies the seed into `localStorage` under `rentease-demo-data`. It preserves later edits, migrates older records to include notifications, and restores the sample records when saved JSON is malformed or has an unsupported shape. Session storage keeps only the current user ID, in local storage when “Remember me” is selected, or in session storage otherwise.
+The seed records live in `src/data/rentease.js`; browser persistence and session helpers live in `src/lib/demo-store.js`. On first use, the store copies the seed into `localStorage` under `rentease-demo-data`. It preserves later edits, migrates older records to include notifications, and restores the sample records when saved JSON is malformed or has an unsupported shape. Session storage keeps only the current user ID, in local storage when “Remember me” is selected, or in session storage otherwise.
 
 Profiles, listings, applications, rental agreements, rent and utility payment records, maintenance requests, and notifications are saved in one shared data object. Updates dispatch a same-tab event and browser storage events refresh open tabs. Use **Reset demo data** in the dashboard profile menu and confirm to restore original records and sign out.
 
@@ -48,7 +48,6 @@ Local storage is limited to one browser profile and device, can be cleared by br
 
 ```bash
 npm run lint
-npx tsc --noEmit
 npm run build
 ```
 

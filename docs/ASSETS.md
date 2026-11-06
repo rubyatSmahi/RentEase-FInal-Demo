@@ -13,7 +13,7 @@ Bundled photography is illustrative only. Replace it with appropriately licensed
 
 ## Typography and icons
 
-- **Manrope** is loaded through `next/font/google` in `src/app/layout.tsx` and is distributed under the SIL Open Font License.
+- **Manrope** is loaded through `next/font/google` in `src/app/layout.js` and is distributed under the SIL Open Font License.
 - **Lucide React** supplies the interface icons and is distributed under its ISC license.
 
 See [Project overview](PROJECT_OVERVIEW.md) for the adapted visual foundation and [Features](FEATURES.md) for current image usage.

@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Unreleased]
+
+### Changed
+- Migrated application source and Next.js configuration to JavaScript with JSX, retaining the existing routes, behavior, and styling.
+- Replaced TypeScript configuration with `jsconfig.json` and removed TypeScript-only dependencies.
+
 ## [1.0.0] - 2026-10-15
 
 ### Added

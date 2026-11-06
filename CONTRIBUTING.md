@@ -49,8 +49,8 @@ Open [http://localhost:3000](http://localhost:3000) to preview your changes.
 
 ## Coding Standards
 
-### TypeScript & React
-- Maintain strict typing in `src/types/index.ts`. Avoid `any`.
+### JavaScript & React
+- Use JavaScript with JSX in `.js` files and keep runtime data validation explicit.
 - Adhere to the Next.js App Router paradigm: keep page shells as Server Components unless interactivity (state, event handlers) requires `'use client'`.
 - Validate all props and avoid unhandled `null`/`undefined` accesses.
 
@@ -76,7 +76,7 @@ Before opening a Pull Request, verify that the project builds cleanly without er
 # 1. Run ESLint checks
 npm run lint
 
-# 2. Run Next.js production build & TypeScript type checking
+# 2. Run the Next.js production build
 npm run build
 
 # 3. Test the production bundle locally

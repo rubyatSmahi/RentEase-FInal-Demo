@@ -35,5 +35,5 @@ Include the following information in your advisory:
 
 When deploying this template for commercial or client usage:
 - **Environment Variables**: Store sensitive production keys (`RESEND_API_KEY`, private tokens) in server-side environment variables only. Never prefix sensitive secrets with `NEXT_PUBLIC_`.
-- **Content Security Policy (CSP)**: Configure strict CSP headers in `next.config.ts` or edge middleware.
+- **Content Security Policy (CSP)**: Configure strict CSP headers in `next.config.mjs` or edge middleware.
 - **Input Sanitization**: If integrating a live backend or custom form submission handler, sanitize all user inputs before persistence or email dispatch.
